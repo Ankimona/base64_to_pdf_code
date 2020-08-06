@@ -1,0 +1,8 @@
+byte[] decodedBytes = Base64.decodeBase64(encodedstr);
+ OutputStream file = new FileOutputStream(f);
+ Document document = new Document();
+ PdfWriter.getInstance(document, file);
+ document.open();
+ document.add(new Paragraph(new String(decodedBytes)));
+ document.close();
+ file.close();
